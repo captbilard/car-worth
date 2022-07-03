@@ -19,8 +19,8 @@ export class UsersService {
     return this.repo.findOne({ where: { id: id } });
   }
 
-  find(user) {
-    return this.repo.find({ where: { username: user } });
+  find(username: string) {
+    return this.repo.findBy({ username });
   }
 
   async update(id: number, attrs: Partial<UserEntity>) {
